@@ -1,0 +1,48 @@
+.main-card {
+	border-color: black;
+	margin:	50px auto;
+	width:	99%;
+	height: 90%;
+
+}
+
+.data-card {
+	border-color: black;
+	overflow: scroll;
+	float: left;
+	width:	25%;
+	height: 80%;
+}
+
+.view-card {
+	border-color: black;
+	margin-left: 30%;
+	width:	70%;
+	height: 80%;
+}
+
+.user-card{
+	margin: 20px;
+	border-color: black;
+	width:	35%;
+	height: 90%;
+}
+
+.user-pic {
+	border-color: black;
+	margin: 0 auto;
+	width:	200px;
+	height: 200px;
+}
+
+.map-card {
+	display: inline-block;
+	border-color: black;
+	height: 400px;
+    width: 50%;
+}
+
+#map {
+    height: 400px;
+    width: 50%;
+}
