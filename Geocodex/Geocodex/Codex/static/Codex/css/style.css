@@ -1,0 +1,53 @@
+.main-card {
+	border-color: black;
+	margin:	50px auto;
+	width:	99%;
+	height: 90%;
+
+}
+
+.data-card {
+	border-color: black;
+	overflow: scroll;
+	float: left;
+	width:	28%;
+	height: 80%;
+	padding: 0px;
+}
+
+.view-card {
+	display: table;
+	border-color: black;
+	margin-left: 30%;
+	width:	70%;
+	height: 80%;
+}
+
+.user-card{
+	float: left;
+	width: 30%;
+	margin: 20px;
+	border-color: black;
+	width:	35%;
+	height: 90%;
+}
+
+.user-pic {
+	border-color: black;
+	margin: 0 auto;
+	width:	200px;
+	height: 200px;
+}
+
+.map-card {
+	border-color: black;
+	margin-left: 35%;
+	margin: 20px;
+	width:	60%;
+	height: 90%;
+}
+
+.table-target{
+    width: 100%;
+}
+
