@@ -7,12 +7,11 @@
 }
 
 .data-card {
+	overflow: auto;
 	border-color: black;
-	overflow: scroll;
-	float: left;
-	width:	28%;
+	margin: 0 auto;
+	width:	90%;
 	height: 80%;
-	padding: 0px;
 }
 
 .view-card {
@@ -24,7 +23,7 @@
 }
 
 .user-card{
-	float: left;
+	float: left; 
 	width: 30%;
 	margin: 20px;
 	border-color: black;
@@ -33,21 +32,22 @@
 }
 
 .user-pic {
+
 	border-color: black;
 	margin: 0 auto;
-	width:	200px;
-	height: 200px;
+	width:	50px;
+	height: 50px;
 }
 
 .map-card {
 	border-color: black;
 	margin-left: 35%;
-	margin: 20px;
+	margin: 20px; 
 	width:	60%;
 	height: 90%;
 }
 
-.table-target{
-    width: 100%;
+.card-header, .navbar {
+	background-color: black; 
 }
 
