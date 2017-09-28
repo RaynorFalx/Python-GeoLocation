@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load filters %}
+{% block title %}
+    GeocodeX
+{% endblock %}
+
+{% block content %}
+
+    {% for target in targets %}
+    <div class="card user-card">
+        <div class="card-header user-header text-white bg-dark ">
+            <img class=" img-thumbnail rounded-circle d-flex justify-content-center user-pic-det" src="{{target.picture.url}}" alt="Card image cap">
+        </div>
+        <div class="card-body">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">Nome</span>
+                <input type="text" class="form-control" aria-label="Username" value="{{target.first_name}} {{target.last_name}}" aria-describedby="basic-addon1" readonly>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">Cidade</span>
+                <input type="text" class="form-control" aria-label="Cidade" value="{{target.localization.city}}" aria-describedby="basic-addon2" readonly>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">Bairro</span>
+                <input type="text" class="form-control" aria-label="Bairro" value="{{target.localization.neighborhood}}" aria-describedby="basic-addon4" readonly>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon4">Endereço</span>
+                <input type="text" class="form-control" aria-label="End" value="{{target.localization.address}}" aria-describedby="basic-addon3" readonly>
+            </div>
+        </div>
+    </div>
+    <div class="card map-card" id="map">
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        function initMap() {
+                var marker = {  lat:{{target.localization.neighborhood|addstr:", "|addstr:target.localization.address|addstr:", "|addstr:target.localization.city|addstr:", "|addstr:target.localization.state|addstr:","|lat}},
+                                lng:{{target.localization.neighborhood|addstr:", "|addstr:target.localization.address|addstr:", "|addstr:target.localization.city|addstr:", "|addstr:target.localization.state|addstr:","|lng}}
+                };
+                var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: marker,
+            });
+            var marker = new google.maps.Marker({
+                position: marker,
+                map: map
+            });
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6DLFX8QXyUNtTqUX9yaavfGhbEizZb0g&callback=initMap"></script>
+
+        {% endfor %}
+{% endblock %}
