@@ -1,6 +1,7 @@
 from django.db import models
-
+import geocoder
 # Create your models here.
+
 
 class Localization(models.Model):
     address = models.CharField(max_length=100)
@@ -16,9 +17,8 @@ class Target(models.Model):
     first_name = models.CharField(max_length=30, null=False)
     last_name = models.CharField(max_length=30, null=False)
     picture = models.ImageField(upload_to='imgs')
-    localization = models.ForeignKey(Localization,on_delete=models.CASCADE)
+    localization = models.ForeignKey(Localization, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name
-
 
