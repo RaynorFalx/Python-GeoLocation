@@ -1,10 +1,11 @@
 <html lang="en">
-	{% load static %}
+    {% load static %}
 	<head>
-	 	<meta charset="utf-8">
-
-	  	<title> 
-			{% block title %}
+        <meta charset="utf-8">
+	  	<title>
+			{% block title%}
+				GeocodeX
+			{% endblock%}
 		</title>
 
 	  	<!--JS-->
@@ -19,32 +20,34 @@
 
 		<!--STYLE-->
 
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<link rel="stylesheet" href="{% static '/css/Codex/style.css' %}">
 	</head>
-
 	<body>
 		<div class="back-ground">
 			<div class="card main-card ">
-				<div class="card-header text-white border-light">
-					<nav class="navbar navbar-expand-lg ">
-						<div class="collapse navbar-collapse" id="navbarNav">
-    							<ul class="navbar-nav">
-								<li class="nav-item active">
-									<a class="btn btn-outline-light" href="#" role="button">GeoCodeX</a>
-								</li>
-								&nbsp;&nbsp;
-								<li class="nav-item active">
-									<a class="btn btn-outline-light" href="#" role="button">Gerênciar</a>
-								</li>
-						     	</ul>
+				<div class="card-header text-white">
+					<nav class="navbar navbar-expand-lg">
+  						<div class="collapse navbar-collapse" id="navbarNav">
+    						<ul class="navbar-nav">
+    							<li class="nav-item active">
+						        	<a class="btn btn-outline-light" href="/index/" role="button">GeoCodeX</a>
+						      	</li>
+						      	&nbsp;&nbsp;
+						    	<li class="nav-item active">
+						        	<a class="btn btn-outline-light" href="/admin/" role="button">Gerênciar</a>
+						      	</li>
+						     </ul>
 						</div>
 					</nav>
 				</div>
+
+                <div class="card-body">
+                    {% block content %}
+                    {% endblock %}
+                </div>
 			</div>
 		</div>
-		<div class="card-body">
-			{% block content %}
-			{% endblock %}
-		</div>
+		{% block javascript %}
+		{% endblock %}
 	</body>
 </html>
